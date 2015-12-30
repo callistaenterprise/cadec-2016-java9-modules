@@ -29,10 +29,10 @@ mkdir build
 #jar cvf build/app1.jar -C app1/target se
 
 javac $(find common-lib/src -name "*.java")
-jar cvf build/common-lib.jar -C common-lib/src/main/java se
+jar cvf build/common-lib.jar -C common-lib/src/main/java .
 
 javac -cp build/common-lib.jar $(find app1/src -name "*.java")
-jar cvf build/app1.jar -C app1/src/main/java se
+jar cvf build/app1.jar -C app1/src/main/java .
 
 # run
 java -cp build/app1.jar:build/common-lib.jar se.callista.java9.modules.app1.App1
