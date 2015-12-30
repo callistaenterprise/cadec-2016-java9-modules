@@ -32,9 +32,11 @@ javac $(find common-lib/src -name "*.java")
 jar cvf build/se.callista.java9.modules.common.jar -C common-lib/src/main/java .
 
 javac -modulepath build $(find app1/src -name "*.java")
-#jar cvf build/se.callista.java9.modules.app1.jar -C app1/src/main/java .
+jar cvf build/se.callista.java9.modules.app1.jar -C app1/src/main/java .
 
 # run
-#java -modulepath build/app1.jar:build/common-lib.jar se.callista.java9.modules.app1.App1
-# 
-#java -modulepath build/app1.jar se.callista.java9.modules.app1.App1
+java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1
+
+# test fail to resolve (read) module
+mv build/se.callista.java9.modules.common.jar build/se.callista.java9.modules.common.jar_nop
+java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1
