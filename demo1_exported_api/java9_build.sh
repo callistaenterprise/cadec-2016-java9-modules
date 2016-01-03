@@ -38,5 +38,5 @@ jar cvf build/se.callista.java9.modules.app1.jar -C app1/src/main/java .
 java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1
 
 # test fail to resolve (read) module
-mv build/se.callista.java9.modules.common.jar build/se.callista.java9.modules.common.jar_nop
-java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1
+#mv build/se.callista.java9.modules.common.jar build/se.callista.java9.modules.common.jar_nop
+#java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1

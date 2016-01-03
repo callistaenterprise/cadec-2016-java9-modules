@@ -11,6 +11,9 @@ public class App1 {
 		Echo e = new Echo();
 		//e.echo("hello : " + new Formatter().formatDate(new Date()));
 		e.echo("hello : " + new Date());
+
+		e.echo("hello", new java.sql.Timestamp(System.currentTimeMillis()));
+		//e.echo("hello", new java.sql.Timestamp(1));
 	}
 
 }
