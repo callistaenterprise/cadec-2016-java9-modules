@@ -22,4 +22,7 @@ jar cvfe build/se.callista.java9.modules.appminimal.jar se.callista.java9.module
 
 # run
 date
-java -jar build/se.callista.java9.modules.appminimal.jar
+# using classpath
+#java -jar build/se.callista.java9.modules.appminimal.jar
+# using modules
+java -modulepath build -m se.callista.java9.modules.appminimal
