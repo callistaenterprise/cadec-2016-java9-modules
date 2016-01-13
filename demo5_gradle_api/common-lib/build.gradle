@@ -15,6 +15,8 @@ model {
 			api {
 				exports 'se.callista.java9.modules.common.api'
 			}
+
+			targetPlatform 'java9'
 		}
 	}
 }
