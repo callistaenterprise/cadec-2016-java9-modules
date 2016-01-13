@@ -11,6 +11,10 @@ model {
 					source.srcDir 'src/main/java'
 				}
 			}
+
+			api {
+				exports 'se.callista.java9.modules.common.api'
+			}
 		}
 	}
 }
