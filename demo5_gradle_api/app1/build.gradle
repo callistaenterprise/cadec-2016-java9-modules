@@ -1,0 +1,20 @@
+plugins {
+	id 'jvm-component'
+	id 'java-lang'
+}
+
+model {
+	components {
+		app1(JvmLibrarySpec) {
+			sources {
+				java {
+					source.srcDir 'src/main/java'
+
+					dependencies {
+						project ':common-lib' library 'common-lib'
+					}
+				}
+			}
+		}
+	}
+}

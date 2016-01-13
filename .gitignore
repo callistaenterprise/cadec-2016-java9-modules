@@ -9,5 +9,8 @@ target
 # Mac
 .DS_Store
 
-build/
 *.class
+
+# gradle
+build/
+.gradle/
