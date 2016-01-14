@@ -16,20 +16,18 @@ public class App1 {
 		Echo echo = new Echo();
 		echo.echo("echo still working!");
 		
+		App1 app = new App1();
 		// load resources
 		try {
-			App1 app = new App1();
-
 			app.load("app1.properties");
-			app.load("common.properties");
-			
-			app.tryLoadResourceAsUrl("app1.properties");
-			app.tryLoadResourceAsUrl("common.properties");
-			app.tryLoadResourceAsUrl("spring-context-example.xml");
-
+			app.load("common.properties");			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		app.tryLoadResourceAsUrl("app1.properties");
+		app.tryLoadResourceAsUrl("common.properties");
+		app.tryLoadResourceAsUrl("spring-context-example.xml");
 	}
 
 	private void load(String name) throws IOException {
@@ -62,6 +60,7 @@ public class App1 {
 	}
 	
 	private void tryLoadResourceAsUrl(String name) {
+		System.out.println("try loading as URL: " + name);
 		try {
 			Enumeration<URL> urls = Thread.currentThread().getContextClassLoader().getResources(name);
 			while (urls.hasMoreElements()) {
