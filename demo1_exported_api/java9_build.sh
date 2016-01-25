@@ -31,12 +31,13 @@ mkdir build
 javac $(find common-lib/src -name "*.java")
 jar cvf build/se.callista.java9.modules.common.jar -C common-lib/src/main/java .
 
+# build splitpackage
+javac $(find common-splitpackage-lib/src -name "*.java")
+jar cvf build/se.callista.java9.modules.common.splitpackage.jar -C common-splitpackage-lib/src/main/java .
+
+# fail compile due to split packages ...
 javac -modulepath build $(find app1/src -name "*.java")
-jar cvf build/se.callista.java9.modules.app1.jar -C app1/src/main/java .
+#jar cvf build/se.callista.java9.modules.app1.jar -C app1/src/main/java .
 
 # run
-java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1
-
-# test fail to resolve (read) module
-mv build/se.callista.java9.modules.common.jar build/se.callista.java9.modules.common.jar_nop
-java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1
+#java -modulepath build -m se.callista.java9.modules.app1/se.callista.java9.modules.app1.App1
